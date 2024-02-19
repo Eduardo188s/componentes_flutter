@@ -1,5 +1,6 @@
 import'package:flutter/material.dart';
-import 'package:practica_3/home_screen.dart';
+import 'package:practica_3/screens/home_screen.dart';
+import 'package:practica_3/theme/app_theme.dart';
 
 
 class MainApp extends StatelessWidget {
@@ -7,9 +8,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: const HomeScreen(),
+      theme: AppTheme.darkTheme,
     );
   }
 }
