@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practica_3/theme/app_theme.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen ({super.key});
@@ -10,26 +12,39 @@ class HomeScreen extends StatelessWidget {
         title:const Text('Componentes de Flitter'),
         ),
         body: ListView(
-          children: const <Widget>[
+          children: <Widget>[
             ListTile(
-              title: Text('El America es Campeón '),
-              subtitle: Text('14 Copas MX'),
-              leading: Icon(Icons.casino_sharp),
-              trailing: Icon(Icons.arrow_right_alt_outlined),
+              title: Text('Entradas',
+              //style: theme.of(context).textTheme.headlineLarge,
+              style: AppTheme.ligthTheme.textTheme.headlineLarge
+              ),
+              subtitle:Text('Introduciendo valores',
+              style: AppTheme.ligthTheme.textTheme.bodySmall
+              ),
+              leading:const Icon(Icons.power_input),
+              trailing:const Icon(Icons.arrow_right_alt_outlined),
             ),
-            Divider(),
-              ListTile(
-              title: Text('A por la 15 '),
-              subtitle: Text('Las aguilas del America 🏆'),
-              leading: Icon(Icons.castle_outlined),
-              trailing: Icon(Icons.arrow_right_alt_outlined),
+            const Divider(),
+               ListTile(
+              title: Text('ListView.builder',
+              style: AppTheme.ligthTheme.textTheme.headlineLarge
+              ),
+              subtitle: Text('Lista con scroll infinito',
+              style: AppTheme.ligthTheme.textTheme.bodySmall
+              ),
+              leading:const Icon(Icons.list),
+              trailing: const Icon(Icons.arrow_right_alt_outlined),
             ),
-            Divider(),
+            const Divider(),
               ListTile(
-              title: Text('Son los mejores de la liga'),
-              subtitle: Text('America, America a ganar!!!'),
-              leading: Icon(Icons.call_split_rounded),
-              trailing: Icon(Icons.arrow_right_alt_outlined),
+              title: Text('Notificaciones',
+              style: AppTheme.ligthTheme.textTheme.headlineLarge
+              ),
+              subtitle: Text('Mostrar una notificación',
+              style: AppTheme.ligthTheme.textTheme.bodySmall
+              ),
+              leading:const Icon(Icons.notification_add),
+              trailing:const Icon(Icons.arrow_right_alt_outlined),
             )
           ],
         )
