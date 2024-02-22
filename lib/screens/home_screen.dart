@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practica_3/screens/input_screen.dart';
+import 'package:practica_3/screens/notification_screen.dart';
 import 'package:practica_3/theme/app_theme.dart';
 
 
@@ -43,6 +44,14 @@ class HomeScreen extends StatelessWidget {
               ),
               leading:const Icon(Icons.list),
               trailing: const Icon(Icons.arrow_right_alt_outlined),
+
+                onTap: () {
+                final ruta2 = MaterialPageRoute(builder: (context){
+                  return const HomeScreen();
+                });
+                Navigator.push(context, ruta2);
+              },
+
             ),
             const Divider(),
               ListTile(
@@ -54,6 +63,13 @@ class HomeScreen extends StatelessWidget {
               ),
               leading:const Icon(Icons.notification_add),
               trailing:const Icon(Icons.arrow_right_alt_outlined),
+
+                 onTap: () {
+                final ruta3 = MaterialPageRoute(builder: (context){
+                  return const NoticationsScreen();
+                });
+                Navigator.push(context, ruta3);
+              },
             )
           ],
         )
