@@ -6,14 +6,36 @@ class AppTheme{
   //Constantes de color primario
   static const primaryColor = Color.fromRGBO(7, 98, 12, 0.612);
   // Constante de color de fondo 
-  static const backColor = Color.fromRGBO(153, 197, 170, 0.612);
+  static const backColor = Color.fromRGBO(255, 255, 255, 1);
   //   Constante de color secundario
   static const secondatyColor = Color.fromRGBO(17, 35, 177, 0.792);
 // Constante de tema 
   static final ThemeData ligthTheme = ThemeData().copyWith(
     scaffoldBackgroundColor: backColor,
-    appBarTheme: const AppBarTheme(
-      color: primaryColor
+    appBarTheme:  AppBarTheme(
+      color: primaryColor,
+      titleTextStyle: GoogleFonts.allura(
+        color: Colors.black87,
+        fontSize: 40,
+        fontWeight: FontWeight.bold
+      ),
+      ),
+      iconTheme: const IconThemeData(
+        color: primaryColor,
+        size: 20.0
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all( 
+            Color.fromARGB(251, 171, 226, 169),
+          ),
+          foregroundColor: MaterialStateProperty.all(
+            Colors.white,
+          ),
+          textStyle: MaterialStateProperty.all(
+            GoogleFonts.abyssinicaSil(fontSize: 25)
+          )
+        )
       ),
       textTheme: TextTheme(
         //Subtitulos grandes

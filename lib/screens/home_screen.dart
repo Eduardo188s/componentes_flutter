@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title:const Text('Componentes de Flitter'),
+        title:const Text('Componentes de Flutter'),
         ),
         body: ListView(
           children: <Widget>[
@@ -23,8 +23,17 @@ class HomeScreen extends StatelessWidget {
               subtitle:Text('Introduciendo valores',
               style: AppTheme.ligthTheme.textTheme.bodySmall
               ),
-              leading:const Icon(Icons.power_input),
-              trailing:const Icon(Icons.arrow_right_alt_outlined),
+              leading: IconTheme(
+                data: AppTheme.ligthTheme.iconTheme,
+                child :const Icon(Icons.power_input
+                ),
+               ),
+              
+              trailing: IconTheme(
+                data: AppTheme.ligthTheme.iconTheme,
+                child: const Icon(Icons.arrow_right_alt_outlined
+                ),
+              ),
             
               onTap: () {
                 final ruta1 = MaterialPageRoute(builder: (context){
@@ -42,8 +51,15 @@ class HomeScreen extends StatelessWidget {
               subtitle: Text('Lista con scroll infinito',
               style: AppTheme.ligthTheme.textTheme.bodySmall
               ),
-              leading:const Icon(Icons.list),
-              trailing: const Icon(Icons.arrow_right_alt_outlined),
+              leading: IconTheme(
+                data: AppTheme.ligthTheme.iconTheme ,
+                child: const Icon(Icons.list),
+                ),
+              trailing: IconTheme(
+                data: AppTheme.ligthTheme.iconTheme,
+                child: const Icon(Icons.arrow_right_alt_outlined
+                ),
+              ),
 
                 onTap: () {
                 final ruta2 = MaterialPageRoute(builder: (context){
@@ -61,8 +77,16 @@ class HomeScreen extends StatelessWidget {
               subtitle: Text('Mostrar una notificación',
               style: AppTheme.ligthTheme.textTheme.bodySmall
               ),
-              leading:const Icon(Icons.notification_add),
-              trailing:const Icon(Icons.arrow_right_alt_outlined),
+              leading: IconTheme(
+                data: AppTheme.ligthTheme.iconTheme,
+                child: const Icon(Icons.notification_add),
+                ),
+              
+              trailing: IconTheme(
+                data: AppTheme.ligthTheme.iconTheme,
+                child: const Icon(Icons.arrow_right_alt_outlined
+                ),
+              ),
 
                  onTap: () {
                 final ruta3 = MaterialPageRoute(builder: (context){
