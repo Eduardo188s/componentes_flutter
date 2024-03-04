@@ -19,33 +19,39 @@ class _InputsScreenState extends State<InputsScreen> {
         title: const Text('Entradas'),
         
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text('Entradas', 
-          style: AppTheme.ligthTheme.textTheme.headlineLarge,
-          ),
-          entradaNombre(),
-          entradaSwitch(),
-          entradaSlider(),
-          Row (
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: null, child: Text('Regresar',
-                style: AppTheme.ligthTheme.textTheme.bodySmall,
-                ),
-                ),
-               ElevatedButton(
-                onPressed: null, child: Text('Ventana de datos',
-                style: AppTheme.ligthTheme.textTheme.bodySmall,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            entradaNombre(),
+            entradaSwitch(),
+            entradaSlider(),
+                 const ElevatedButton(
+                  onPressed: null, child: Text('Guardar',
+                  )
                 )
-              )
-            ],
-          )
-        ],
-      ),
-    );
+              ],
+            )
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+           backgroundColor: const Color.fromARGB(156, 78, 216, 85),
+          items: const [
+            BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'inicio'
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.data_array),
+              label: 'Datos'
+              ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.portable_wifi_off),
+              label: 'Perfil'
+            ),
+          ]
+        ),
+      );
   }
 
   TextField entradaNombre() {
