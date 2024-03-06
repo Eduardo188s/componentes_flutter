@@ -11,6 +11,7 @@ class InputsScreen extends StatefulWidget {
 class _InputsScreenState extends State<InputsScreen> {
   bool switchValue = false; // controlar el valor de switch
   double sliderValue = 0;
+  int radioSelected = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class _InputsScreenState extends State<InputsScreen> {
             entradaNombre(),
             entradaSwitch(),
             entradaSlider(),
+            entradaRadio(),
                  const ElevatedButton(
                   onPressed: null, child: Text('Guardar',
                   )
@@ -108,4 +110,49 @@ class _InputsScreenState extends State<InputsScreen> {
       ],
     );
   }
+
+  Column entradaRadio(){
+    return Column(
+      children: [
+        Text('¿Qué prefieres para desarrollo movil',
+        style:AppTheme.ligthTheme.textTheme.headlineLarge
+        ),
+        ListTile(
+          title: Text('Kottlin',
+          style: AppTheme.ligthTheme.textTheme.headlineLarge,
+          ),
+          leading: Transform.scale(
+            scale: 1.5,
+            child: Radio(
+              value: 1,
+              groupValue: radioSelected,
+              onChanged: (value){
+                setState(() {
+                  radioSelected = value!;
+                });
+              },
+            ),
+          ),
+        ),
+        ListTile(
+          title: Text('Flutter',
+          style: AppTheme.ligthTheme.textTheme.headlineLarge,
+          ),
+          leading: Transform.scale(
+            scale: 1.5,
+            child: Radio(
+              value: 2,
+              groupValue: radioSelected,
+              onChanged: (value){
+                setState(() {
+                  radioSelected = value!;
+                });
+              },
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
 }
