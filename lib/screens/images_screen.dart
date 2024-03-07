@@ -4,9 +4,11 @@ import 'package:transparent_image/transparent_image.dart';
 
 class ImagesScreen extends StatefulWidget {
   const ImagesScreen({super.key});
+  
 
   @override
   State<ImagesScreen> createState() => _ImagesScreenState();
+  
 }
 
 class _ImagesScreenState extends State<ImagesScreen> {
@@ -23,6 +25,35 @@ class _ImagesScreenState extends State<ImagesScreen> {
            imageFade(),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          // currentIndex: indexNavigation,
+          //  backgroundColor: const Color.fromARGB(156, 78, 216, 85),
+          //  unselectedItemColor: Colors.black,
+          //  selectedItemColor: const Color.fromARGB(255, 15, 12, 121),
+          //  onTap: (index) => openScreen (index, context),
+       items: const [
+            BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'inicio'
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            label: 'Lista'
+              ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.notification_add),
+            label: 'Notificaciones'
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.image),
+            label: 'Imagenes'
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.exit_to_app),
+            label: 'Salir'
+            ),
+          ]
+        ),
     );
   }
   Card cardImage1(){
